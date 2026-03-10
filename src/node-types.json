@@ -20,6 +20,10 @@
             "named": true
           },
           {
+            "type": "parenthesized",
+            "named": true
+          },
+          {
             "type": "path",
             "named": true
           },
@@ -59,7 +63,7 @@
     "fields": {},
     "children": {
       "multiple": false,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "identifier",
@@ -125,6 +129,53 @@
     "fields": {}
   },
   {
+    "type": "parenthesized",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "flag",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "parenthesized",
+          "named": true
+        },
+        {
+          "type": "path",
+          "named": true
+        },
+        {
+          "type": "pipe_operator",
+          "named": true
+        },
+        {
+          "type": "redirect_operator",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "redirect_operator",
     "named": true,
     "fields": {}
@@ -162,16 +213,17 @@
   {
     "type": "substring_variable",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "identifier",
-          "named": true
-        }
-      ]
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -218,7 +270,11 @@
     "named": false
   },
   {
-    "type": "'",
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
     "named": false
   },
   {
@@ -239,14 +295,6 @@
   },
   {
     "type": "1",
-    "named": false
-  },
-  {
-    "type": "1>",
-    "named": false
-  },
-  {
-    "type": "1>>",
     "named": false
   },
   {
@@ -314,19 +362,11 @@
     "named": false
   },
   {
-    "type": "CALL",
+    "type": "APPDATA",
     "named": false
   },
   {
     "type": "CD",
-    "named": false
-  },
-  {
-    "type": "CHDIR",
-    "named": false
-  },
-  {
-    "type": "CLS",
     "named": false
   },
   {
@@ -342,111 +382,11 @@
     "named": false
   },
   {
-    "type": "COPY",
-    "named": false
-  },
-  {
-    "type": "Call",
-    "named": false
-  },
-  {
-    "type": "Cd",
-    "named": false
-  },
-  {
-    "type": "Chdir",
-    "named": false
-  },
-  {
-    "type": "Cls",
-    "named": false
-  },
-  {
-    "type": "Copy",
-    "named": false
-  },
-  {
     "type": "DATE",
     "named": false
   },
   {
-    "type": "DEL",
-    "named": false
-  },
-  {
-    "type": "DIR",
-    "named": false
-  },
-  {
-    "type": "Del",
-    "named": false
-  },
-  {
-    "type": "Dir",
-    "named": false
-  },
-  {
-    "type": "ECHO",
-    "named": false
-  },
-  {
-    "type": "ERASE",
-    "named": false
-  },
-  {
     "type": "ERRORLEVEL",
-    "named": false
-  },
-  {
-    "type": "EXIT",
-    "named": false
-  },
-  {
-    "type": "Echo",
-    "named": false
-  },
-  {
-    "type": "Erase",
-    "named": false
-  },
-  {
-    "type": "Exit",
-    "named": false
-  },
-  {
-    "type": "FIND",
-    "named": false
-  },
-  {
-    "type": "FINDSTR",
-    "named": false
-  },
-  {
-    "type": "FOR",
-    "named": false
-  },
-  {
-    "type": "Find",
-    "named": false
-  },
-  {
-    "type": "Findstr",
-    "named": false
-  },
-  {
-    "type": "For",
-    "named": false
-  },
-  {
-    "type": "GOTO",
-    "named": false
-  },
-  {
-    "type": "Goto",
-    "named": false
-  },
-  {
-    "type": "HIGHESTNUMANODENUMBER",
     "named": false
   },
   {
@@ -455,30 +395,6 @@
   },
   {
     "type": "HOMEPATH",
-    "named": false
-  },
-  {
-    "type": "IF",
-    "named": false
-  },
-  {
-    "type": "If",
-    "named": false
-  },
-  {
-    "type": "MD",
-    "named": false
-  },
-  {
-    "type": "MKDIR",
-    "named": false
-  },
-  {
-    "type": "Md",
-    "named": false
-  },
-  {
-    "type": "Mkdir",
     "named": false
   },
   {
@@ -494,19 +410,7 @@
     "named": false
   },
   {
-    "type": "PAUSE",
-    "named": false
-  },
-  {
     "type": "PROCESSOR_ARCHITECTURE",
-    "named": false
-  },
-  {
-    "type": "PROCESSOR_LEVEL",
-    "named": false
-  },
-  {
-    "type": "PROCESSOR_REVISION",
     "named": false
   },
   {
@@ -514,59 +418,11 @@
     "named": false
   },
   {
-    "type": "PROGRAMFILES(X86)",
-    "named": false
-  },
-  {
-    "type": "Pause",
-    "named": false
-  },
-  {
     "type": "RANDOM",
     "named": false
   },
   {
-    "type": "RD",
-    "named": false
-  },
-  {
-    "type": "REN",
-    "named": false
-  },
-  {
-    "type": "RENAME",
-    "named": false
-  },
-  {
-    "type": "RMDIR",
-    "named": false
-  },
-  {
-    "type": "Rd",
-    "named": false
-  },
-  {
-    "type": "Ren",
-    "named": false
-  },
-  {
-    "type": "Rename",
-    "named": false
-  },
-  {
-    "type": "Rmdir",
-    "named": false
-  },
-  {
-    "type": "SET",
-    "named": false
-  },
-  {
     "type": "SYSTEMROOT",
-    "named": false
-  },
-  {
-    "type": "Set",
     "named": false
   },
   {
@@ -582,14 +438,6 @@
     "named": false
   },
   {
-    "type": "TYPE",
-    "named": false
-  },
-  {
-    "type": "Type",
-    "named": false
-  },
-  {
     "type": "USERDOMAIN",
     "named": false
   },
@@ -602,372 +450,24 @@
     "named": false
   },
   {
-    "type": "attrib",
-    "named": false
-  },
-  {
-    "type": "break",
-    "named": false
-  },
-  {
-    "type": "call",
-    "named": false
-  },
-  {
-    "type": "cd",
-    "named": false
-  },
-  {
-    "type": "chdir",
-    "named": false
-  },
-  {
-    "type": "cls",
-    "named": false
-  },
-  {
-    "type": "color",
-    "named": false
-  },
-  {
     "type": "comment",
     "named": true,
     "extra": true
-  },
-  {
-    "type": "comp",
-    "named": false
-  },
-  {
-    "type": "compact",
-    "named": false
-  },
-  {
-    "type": "convert",
-    "named": false
-  },
-  {
-    "type": "copy",
-    "named": false
-  },
-  {
-    "type": "date",
-    "named": false
-  },
-  {
-    "type": "del",
-    "named": false
-  },
-  {
-    "type": "dir",
-    "named": false
-  },
-  {
-    "type": "driverquery",
-    "named": false
-  },
-  {
-    "type": "echo",
-    "named": false
-  },
-  {
-    "type": "endlocal",
-    "named": false
-  },
-  {
-    "type": "erase",
-    "named": false
-  },
-  {
-    "type": "exit",
-    "named": false
-  },
-  {
-    "type": "fc",
-    "named": false
-  },
-  {
-    "type": "find",
-    "named": false
-  },
-  {
-    "type": "findstr",
-    "named": false
-  },
-  {
-    "type": "for",
-    "named": false
-  },
-  {
-    "type": "ftype",
-    "named": false
-  },
-  {
-    "type": "getmac",
-    "named": false
-  },
-  {
-    "type": "goto",
-    "named": false
-  },
-  {
-    "type": "gpresult",
-    "named": false
-  },
-  {
-    "type": "help",
-    "named": false
-  },
-  {
-    "type": "hostname",
-    "named": false
   },
   {
     "type": "identifier",
     "named": true
   },
   {
-    "type": "if",
-    "named": false
-  },
-  {
-    "type": "ipconfig",
-    "named": false
-  },
-  {
-    "type": "label",
-    "named": false
-  },
-  {
-    "type": "logman",
-    "named": false
-  },
-  {
-    "type": "mapadmin",
-    "named": false
-  },
-  {
-    "type": "md",
-    "named": false
-  },
-  {
-    "type": "mkdir",
-    "named": false
-  },
-  {
-    "type": "mklink",
-    "named": false
-  },
-  {
-    "type": "mode",
-    "named": false
-  },
-  {
-    "type": "more",
-    "named": false
-  },
-  {
-    "type": "move",
-    "named": false
-  },
-  {
-    "type": "msg",
-    "named": false
-  },
-  {
-    "type": "net",
-    "named": false
-  },
-  {
-    "type": "netsh",
-    "named": false
-  },
-  {
-    "type": "nslookup",
-    "named": false
-  },
-  {
     "type": "number",
     "named": true
-  },
-  {
-    "type": "openfiles",
-    "named": false
   },
   {
     "type": "path",
     "named": true
   },
   {
-    "type": "pathping",
-    "named": false
-  },
-  {
-    "type": "pause",
-    "named": false
-  },
-  {
-    "type": "ping",
-    "named": false
-  },
-  {
     "type": "pipe_operator",
     "named": true
-  },
-  {
-    "type": "popd",
-    "named": false
-  },
-  {
-    "type": "print",
-    "named": false
-  },
-  {
-    "type": "prompt",
-    "named": false
-  },
-  {
-    "type": "pushd",
-    "named": false
-  },
-  {
-    "type": "query",
-    "named": false
-  },
-  {
-    "type": "rasdial",
-    "named": false
-  },
-  {
-    "type": "rd",
-    "named": false
-  },
-  {
-    "type": "recover",
-    "named": false
-  },
-  {
-    "type": "reg",
-    "named": false
-  },
-  {
-    "type": "ren",
-    "named": false
-  },
-  {
-    "type": "rename",
-    "named": false
-  },
-  {
-    "type": "replace",
-    "named": false
-  },
-  {
-    "type": "rmdir",
-    "named": false
-  },
-  {
-    "type": "route",
-    "named": false
-  },
-  {
-    "type": "runas",
-    "named": false
-  },
-  {
-    "type": "schtasks",
-    "named": false
-  },
-  {
-    "type": "set",
-    "named": false
-  },
-  {
-    "type": "setlocal",
-    "named": false
-  },
-  {
-    "type": "shift",
-    "named": false
-  },
-  {
-    "type": "shutdown",
-    "named": false
-  },
-  {
-    "type": "sort",
-    "named": false
-  },
-  {
-    "type": "start",
-    "named": false
-  },
-  {
-    "type": "subst",
-    "named": false
-  },
-  {
-    "type": "systeminfo",
-    "named": false
-  },
-  {
-    "type": "taskkill",
-    "named": false
-  },
-  {
-    "type": "tasklist",
-    "named": false
-  },
-  {
-    "type": "time",
-    "named": false
-  },
-  {
-    "type": "timeout",
-    "named": false
-  },
-  {
-    "type": "title",
-    "named": false
-  },
-  {
-    "type": "tracert",
-    "named": false
-  },
-  {
-    "type": "tree",
-    "named": false
-  },
-  {
-    "type": "type",
-    "named": false
-  },
-  {
-    "type": "ver",
-    "named": false
-  },
-  {
-    "type": "verify",
-    "named": false
-  },
-  {
-    "type": "vol",
-    "named": false
-  },
-  {
-    "type": "vssadmin",
-    "named": false
-  },
-  {
-    "type": "where",
-    "named": false
-  },
-  {
-    "type": "whoami",
-    "named": false
-  },
-  {
-    "type": "wmic",
-    "named": false
   }
 ]
