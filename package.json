@@ -1,0 +1,41 @@
+{
+  "name": "tree-sitter-bat",
+  "version": "0.1.0",
+  "description": "Tree-sitter grammar for Windows Batch files (.bat, .cmd)",
+  "main": "bindings/node",
+  "scripts": {
+    "generate": "tree-sitter generate",
+    "test": "tree-sitter test",
+    "parse": "tree-sitter parse",
+    "build": "tree-sitter generate && node-gyp build"
+  },
+  "keywords": [
+    "tree-sitter",
+    "batch",
+    "bat",
+    "cmd",
+    "windows",
+    "parser",
+    "grammar"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "node-addon-api": "^7.1.0",
+    "node-gyp-build": "^4.6.0"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.8",
+    "node-gyp": "^9.4.0"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.batch",
+      "file-types": [
+        "bat",
+        "cmd"
+      ]
+    }
+  ],
+  "gypfile": true
+}
