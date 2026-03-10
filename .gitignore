@@ -1,9 +1,8 @@
 node_modules/
-src/parser.c
-src/grammar.json
-src/tree_sitter/
 *.so
 *.dll
 *.dylib
 build/
 .DS_Store
+target/
+*.wasm

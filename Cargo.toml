@@ -1,0 +1,21 @@
+[package]
+name = "tree-sitter-bat"
+description = "Tree-sitter grammar for Windows Batch files"
+version = "0.1.0"
+keywords = ["incremental", "parsing", "tree-sitter", "batch", "bat", "cmd"]
+categories = ["parsing", "text-editors"]
+repository = "https://github.com/imDMG/tree-sitter-bat"
+edition = "2021"
+license = "MIT"
+
+build = "bindings/rust/build.rs"
+include = ["bindings/rust/*", "grammar.js", "tree-sitter.json", "src/*"]
+
+[lib]
+path = "bindings/rust/lib.rs"
+
+[dependencies]
+tree-sitter-language = "0.1"
+
+[build-dependencies]
+cc = "1.0"
