@@ -181,6 +181,11 @@
     "fields": {}
   },
   {
+    "type": "set_options",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "source_file",
     "named": true,
     "root": true,
@@ -195,6 +200,10 @@
         },
         {
           "type": "label",
+          "named": true
+        },
+        {
+          "type": "variable_definition",
           "named": true
         }
       ]
@@ -252,6 +261,72 @@
         },
         {
           "type": "substring_variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "variable_definition",
+    "named": true,
+    "fields": {
+      "command": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "SET",
+            "named": false
+          },
+          {
+            "type": "Set",
+            "named": false
+          },
+          {
+            "type": "set",
+            "named": false
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "path",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "set_options",
           "named": true
         }
       ]
@@ -346,6 +421,10 @@
     "named": false
   },
   {
+    "type": "=",
+    "named": false
+  },
+  {
     "type": ">",
     "named": false
   },
@@ -422,7 +501,15 @@
     "named": false
   },
   {
+    "type": "SET",
+    "named": false
+  },
+  {
     "type": "SYSTEMROOT",
+    "named": false
+  },
+  {
+    "type": "Set",
     "named": false
   },
   {
@@ -469,5 +556,9 @@
   {
     "type": "pipe_operator",
     "named": true
+  },
+  {
+    "type": "set",
+    "named": false
   }
 ]
